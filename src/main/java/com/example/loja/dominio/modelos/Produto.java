@@ -31,8 +31,6 @@ public class Produto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-
 	public Produto(Long id, String nome, BigDecimal preco, String descricao) {
 		super();
 		this.id = id;
@@ -40,8 +38,6 @@ public class Produto {
 		this.preco = preco;
 		this.descricao = descricao;
 	}
-
-
 
 	public Long getId() {
 		return id;

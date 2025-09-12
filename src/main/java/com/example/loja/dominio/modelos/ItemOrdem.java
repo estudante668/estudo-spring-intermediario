@@ -13,18 +13,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "itens-ordem")
 public class ItemOrdem {
-	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+	private Long id;	
 	@ManyToOne(optional = false)
-	private Ordem ordem;
-	
+	private Ordem ordem;	
 	@ManyToOne(optional = false)
-	private Produto produto;
-	
-	private int quantity;
-	
+	private Produto produto;	
+	private int quantity;	
 	private BigDecimal unitPrice;
 
 	public ItemOrdem() {

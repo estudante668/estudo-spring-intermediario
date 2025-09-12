@@ -18,18 +18,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "ordens")
 public class Ordem {
-
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	@ManyToOne(optional = false)
-	private Usuario usuarios;
-	
+	private Usuario usuarios;	
 	@OneToMany(mappedBy = "ordem", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<ItemOrdem> items = new ArrayList<>();
-	
-	private BigDecimal total;
-	
+	private List<ItemOrdem> items = new ArrayList<>();	
+	private BigDecimal total;	
 	private Instant createdAt = Instant.now();
 	
 	public Ordem() {

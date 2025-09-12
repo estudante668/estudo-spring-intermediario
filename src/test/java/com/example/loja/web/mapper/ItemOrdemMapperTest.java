@@ -29,12 +29,14 @@ public class ItemOrdemMapperTest {
         ItemOrdem item = new ItemOrdem();
         item.setProduto(produto);
         item.setQuantity(2);
+        
         item.setUnitPrice(new BigDecimal("99.90"));
 
         ItemOrdemDTO dto = mapper.toDTO(item);
 
         assertAll(
         	    () -> assertEquals(5L, dto.getProdutoId()),
+        	    () -> assertEquals(2, dto.getQuantity()),
         	    () -> assertEquals(2, dto.getQuantity()),
         	    () -> assertEquals(0, dto.getUnitPrice().compareTo(new BigDecimal("99.90")))
         	);
